@@ -7,14 +7,7 @@ import {
 } from 'react-router-dom';
 
 import NavigationContainer from './nav-bar/navigation-container'
-import Clay from './materials/clay'
-import Tools from './materials/tools'
-import Glase from './materials/glase'
-import Plaster from './materials/plaster'
-
-import Welcome from './about-us/welcome'
-import Refrences from './about-us/refrences'
-import CustomerActivity from './about-us/customer-activity'
+import Form from './form/form'
 
 
 export default class App extends Component {
@@ -25,13 +18,7 @@ export default class App extends Component {
           <div>
             <NavigationContainer />
             <Switch>
-              <Route path='/clays' component={Clay}/>
-              <Route path='/glase' component={Glase}/>
-              <Route path='/tools' component={Tools}/>
-              <Route path='/plaster' component={Plaster}/>
-              <Route path='/customer-activity' component={CustomerActivity}/>
-              <Route path='/refrences' component={Refrences}/>
-              <Route path='/welcome' component={Welcome}/>
+              <Route path='/form' component={Form}/>
             </Switch>
           </div>
         </Router>

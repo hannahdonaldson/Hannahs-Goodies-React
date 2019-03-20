@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
 
-export default class CustomerActivity extends Component {
+export default class Form extends Component {
     render() {
         return(
             <div>
-                Our Customer Activity!
+                This is my form!
             </div>
         )
     }
