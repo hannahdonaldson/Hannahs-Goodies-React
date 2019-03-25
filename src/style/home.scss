@@ -1,0 +1,23 @@
+.picture {
+    img {
+        // padding: 100px;
+        width: 100%;
+        height: 50%;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+.words-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 300px;
+
+    .words {
+
+    }
+}

@@ -1,0 +1,14 @@
+.form-wrapper{
+    display: flex;
+    justify-content: center;
+    .form {
+        background-color: #E6ADEC;
+        color: #1F2232;
+        width: 500px;
+        display: flex;
+        justify-content: center;
+        .goodie_type {
+            height: 100%;
+        }
+    }
+}

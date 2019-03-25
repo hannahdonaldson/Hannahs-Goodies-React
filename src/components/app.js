@@ -8,6 +8,7 @@ import {
 
 import NavigationContainer from './nav-bar/navigation-container'
 import Form from './form/form'
+import Home from './home'
 
 
 export default class App extends Component {
@@ -19,6 +20,7 @@ export default class App extends Component {
             <NavigationContainer />
             <Switch>
               <Route path='/form' component={Form}/>
+              <Route path='/home' component={Home}/>
             </Switch>
           </div>
         </Router>

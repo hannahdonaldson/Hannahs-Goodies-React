@@ -1,0 +1,33 @@
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #1F2232;
+    width: 100vw;
+
+    .links {
+        display: flex;
+    }
+
+    .nav-link {
+        height: 15px;
+        border-bottom: 1px solid transparent;
+        transition: 0.5s ease-in-out;
+        margin-right: 20px;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        display: flex;
+        justify-content: center;
+        &:hover {
+            color: #b872e7;
+            border-bottom: 1px solid #b872e7;
+        }
+
+
+        a {
+            color: #E6ADEC;
+            text-decoration: none;
+           
+        }
+    }
+}
