@@ -1,7 +1,7 @@
 .nav-wrapper {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    padding: 20px; 
     background-color: #1F2232;
     width: 100vw;
 
@@ -18,16 +18,19 @@
         font-size: 0.9rem;
         display: flex;
         justify-content: center;
-        &:hover {
-            color: #b872e7;
-            border-bottom: 1px solid #b872e7;
-        }
-
 
         a {
-            color: #E6ADEC;
+            color: #C9FBFF;
             text-decoration: none;
-           
+            &:hover {
+                color: #C9FBFF;
+                border-bottom: 1px solid #C9FBFF;
+            }
+        }
+
+        .nav-link-active {
+            color: #FDE8E9;
+            border-bottom: 1px solid #FDE8E9;
         }
     }
 }

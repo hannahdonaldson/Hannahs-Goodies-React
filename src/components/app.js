@@ -6,9 +6,12 @@ import {
   Route
 } from 'react-router-dom';
 
-import NavigationContainer from './nav-bar/navigation-container'
-import Form from './form/form'
-import Home from './home'
+import NavigationContainer from './navigation-container'
+import Home from './pages/home'
+import Form from './pages/form'
+import AboutUs from './pages/about-us'
+import Search from './pages/search-bar'
+
 
 
 export default class App extends Component {
@@ -21,6 +24,8 @@ export default class App extends Component {
             <Switch>
               <Route path='/form' component={Form}/>
               <Route path='/home' component={Home}/>
+              <Route path='/about-us' component={AboutUs}/>
+              <Route path='/search-bar' component={Search}/>
             </Switch>
           </div>
         </Router>

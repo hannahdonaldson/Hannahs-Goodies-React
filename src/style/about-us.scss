@@ -1,0 +1,29 @@
+.about-us-wrapper {
+    .picture {
+        display: flex;
+        justify-content: center;
+        img {
+            // padding: 100px;
+            width: 50%;
+            height: 50%;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            &:hover {
+                // opacity: 0.19;
+                filter: brightness(50%);
+            }
+        } 
+    }
+
+    .words-wrapper {
+        display: flex;
+        justify-content: center;   
+        .words { 
+            padding: 20px;
+            width: 300px;
+        }
+    }
+}

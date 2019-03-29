@@ -1,8 +1,11 @@
+.wrapper {
+    background-color: #596475;
+    padding-bottom: 42px;
 .form-wrapper{
     display: flex;
     justify-content: center;
     .form {
-        background-color: #E6ADEC;
+        background-color: #FDE8E9;
         color: #1F2232;
         width: 500px;
         display: flex;
@@ -11,4 +14,5 @@
             height: 100%;
         }
     }
+}
 }
