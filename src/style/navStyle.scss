@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     padding: 20px; 
-    background-color: #1F2232;
+    background-color: #4d4b4e;
     width: 100vw;
 
     .links {
@@ -18,6 +18,7 @@
         font-size: 0.9rem;
         display: flex;
         justify-content: center;
+        font-size: 1rem;
 
         a {
             color: #C9FBFF;
@@ -29,8 +30,20 @@
         }
 
         .nav-link-active {
-            color: #FDE8E9;
-            border-bottom: 1px solid #FDE8E9;
+            color: #e6a1a8;
+            border-bottom: 1px solid #e6a1a8;
+        }
+    }
+
+    .search-bar-nav {
+
+    }
+
+    .logo {
+        img {
+            width: 140px;
+            height: 80px;
+            margin: -10px;
         }
     }
 }
