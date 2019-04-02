@@ -10,7 +10,7 @@ import NavigationContainer from './navigation-container'
 import Home from './pages/home'
 import Form from './pages/form'
 import AboutUs from './pages/about-us'
-import Search from './pages/search-bar'
+import SearchBar from './search/search-bar'
 
 
 
@@ -25,7 +25,7 @@ export default class App extends Component {
               <Route path='/form' component={Form}/>
               <Route path='/home' component={Home}/>
               <Route path='/about-us' component={AboutUs}/>
-              <Route path='/search-bar' component={Search}/>
+              <Route path='/search-bar' component={SearchBar}/>
             </Switch>
           </div>
         </Router>

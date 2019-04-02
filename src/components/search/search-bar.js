@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
+
+import SearchRender from './search-render'
 
 class SearchBar extends Component {
     constructor(props) {
         super(props)
         this.state = {
             title: '',
-            goodies: []
+            goodies: [],
+            redirect: false
         }
         this.getInfo = this.getInfo.bind(this)
         this.handleInputChange = this.handleInputChange.bind(this)
@@ -59,6 +63,17 @@ class SearchBar extends Component {
     })
   }
 
+  setRedirect = () => {
+    this.setState({
+      redirect: true
+    })
+  }
+  renderRedirect = () => {
+    if (this.state.redirect) {
+      return <Redirect to='/search-render' />
+    }
+  }
+
   render() {
     return (
     <div className = 'search-bar-wrapper'>
@@ -74,9 +89,18 @@ class SearchBar extends Component {
           <button className="submit" type='submit' value="submit" onChange={this.onSubmit}>Submit</button>
         </div>
         <div className="render" >
-            { this.state.goodies !== null ? this.style() : "Your search wasn't found!" }
+            { this.state.goodies !== null ? this.style() /* <SearchRender /> */: "Your search wasn't found!" }
         </div>
       </form>
+
+
+      <div>
+        {this.renderRedirect()}
+        <button onClick={this.setRedirect}>Redirect</button>
+       </div>
+
+
+
     </div>
     )
   }

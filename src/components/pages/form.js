@@ -249,12 +249,10 @@ export default class Form extends React.Component {
             id: '',
 			name: '',
             email: '',
-            month: 'january',
-            year: '',
-            day: '',
             payment: '',
             sc: '',
-            ccn: ''
+            ccn: '',
+            phone: ''
         }
         this.handleChange = this.handleChange.bind(this)
 		this.handleSubmit = this.handleSubmit.bind(this)
@@ -340,7 +338,7 @@ export default class Form extends React.Component {
     render() {
         return(
 			<div className = 'wrapper'>
-                <h1>Subscripe to a monthy package!</h1>
+                <h1>Login!</h1>
 				<button onClick = {() => deleteSubscription}> Delete </button>
 				<div className = 'form-wrapper'>
 				<div className = 'form'>
@@ -353,6 +351,7 @@ export default class Form extends React.Component {
                                 placeholder = 'Name'
                                 value = {this.state.name}
                                 onChange = {this.handleChange}
+                                required
                             />
 
                             <input 
@@ -369,6 +368,15 @@ export default class Form extends React.Component {
                                 type="password"
                                 placeholder = 'Password'
                                 value = {this.state.password}
+                                onChange = {this.handleChange}
+                                
+                            />
+
+                            <input 
+                                name='phone'
+                                type="text"
+                                placeholder = 'Phone Number'
+                                value = {this.state.phone}
                                 onChange = {this.handleChange}
                                 
                             />
