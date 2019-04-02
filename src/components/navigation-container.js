@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import Logo from '../../static/assets/images/hannahs-goodies-logo.png'
+import GoodieButtons from './goodie-catagorys'
 
 import SearchBar from './search/search-bar'
 
@@ -18,6 +19,8 @@ export default class NavigationContainer extends Component {
 					<div className = "search-bar-nav"> <SearchBar /> </div>
 					<hr />
 					<div className = "logo"> <img src={Logo} /> </div>
+
+					<div><GoodieButtons /></div>
 				</div>
 			</div>
 		);
