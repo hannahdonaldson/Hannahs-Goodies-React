@@ -23,7 +23,7 @@ export default class App extends Component {
             <NavigationContainer />
             <Switch>
               <Route path='/form' component={Form}/>
-              <Route path='/home' component={Home}/>
+              <Route path='/' component={Home}/>
               <Route path='/about-us' component={AboutUs}/>
               <Route path='/search-bar' component={SearchBar}/>
             </Switch>
