@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import DeleteAction from './deleteAction'
 import EditGoodie from './editGoodie'
 
@@ -26,10 +27,14 @@ export default class ViewGoodie extends Component {
         .catch(err => {console.log("Fetch Error" + err);})
     }
 
+    addToCart() {
+
+    }
+
     render() {
         return(
             <div className="view-goodies">
-            {console.log(this.props.match.params)}
+            <button onClick = {this.addToCart}>Add to Cart</button>
                 <div>
                 <h1>Goodie Information</h1> <br/>
                     <h3>Title: {this.state.singleGoodie[1]}</h3>
@@ -40,9 +45,9 @@ export default class ViewGoodie extends Component {
                     <br/>
                     <h3>Goodie Type: {this.state.singleGoodie[4]}</h3>
                     <br/>
-                    <h3>Quantity: {this.state.singleGoodie[5]}</h3>
-                    <DeleteAction id = {this.state.singleGoodie[0]} />
-                    <EditGoodie ourProp = {this.state.singleGoodie}/>
+                    <img src={this.state.singleGoodie[5]} />
+                    {/* <DeleteAction id = {this.state.singleGoodie[0]} />
+                    <EditGoodie ourProp = {this.state.singleGoodie}/> */}
                 </div>
             </div>
         )

@@ -53,7 +53,7 @@ class EditGoodie extends Component {
     render() {
         return(
             <div className = ''>
-                <button onClick = {this.editBook}>Update This Book</button>
+                <button onClick = {this.editBook}>Update This Goodie</button>
 
                 <form onSubmit = {this.handleSubmit} style = {{visibility: this.state.formHidden ? "hidden" : "visible"}}>
                     <label>Title</label>

@@ -11,7 +11,8 @@ import Home from './pages/home'
 import Form from './pages/form'
 import AboutUs from './pages/about-us'
 import SearchBar from './search/search-bar'
-import SearchRender from './search/search-render'
+import Auth from './auth/auth'
+import ViewGoodie from './admin/viewGoodie'
 
 
 
@@ -27,7 +28,8 @@ export default class App extends Component {
               <Route exact path='/' component={Home}/>
               <Route path='/about-us' component={AboutUs}/>
               <Route path='/search-bar' component={SearchBar}/>
-              <Route path='/search-render' component={SearchRender}/>
+              <Route path='/auth' component={Auth}/>
+              <Route path='/view_goodie/:id' component={ViewGoodie} />
             </Switch>
           </div>
         </Router>

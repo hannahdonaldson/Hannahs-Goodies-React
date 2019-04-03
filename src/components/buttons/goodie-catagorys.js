@@ -14,20 +14,12 @@ export default class GoodieButtons extends Component {
     this.handleFilter = this.handleFilter.bind(this);
   }
 
-  handleFilter(filter) {
-    this.setState({
-      data: this.state.goodieType.filter(item => {
-        return item.category === filter, this.state.goodieType
-      })
-    });
-  }
-
   getGoodieItems() {
     axios
-      .get("https://hannahs-goodies-api.herokuapp.com/goodie/catagory")
+      .get(`https://hannahs-goodies-api.herokuapp.com/goodies`)
       .then(response => {
         this.setState({
-          data: response
+          data: response.goodieType
         });
       })
       .catch(error => {
@@ -35,19 +27,33 @@ export default class GoodieButtons extends Component {
       });
   }
 
+  handleFilter(filter) {
+    this.setState({
+      data: this.state.goodieType.filter(item => {
+        item.category === filter, this.state.goodieType
+      })
+    });
+  }
+
+  // getGoodieItems() {
+  //   axios
+  //     .get(`https://hannahs-goodies-api.herokuapp.com/goodie/${this.state.goodieType}`)
+  //     .then(response => {
+  //       this.setState({
+  //         data: response
+  //       });
+  //     })
+  //     .catch(error => {
+  //       console.log(error);
+  //     });
+  // }
+
   showGoodieItems() {
       console.log(this.state.data)
-    // this.state.data.map(item => (
-    //      <div key = {item[0]}>
-    //             <h3>title: {data[1]}</h3>
-    //             <GenreItem key={item.id} item={item} />
-    //         </div>
-    // )
-    // )
 }
 
-getGoodieItems() {
-    this.getGoodieItems();
+  componentDidMount() {
+    this.showGoodieItems();
   }
 
 
@@ -58,6 +64,12 @@ getGoodieItems() {
 
     return (
       <div className="goodie-items-wrapper">
+
+        <div>
+            {this.showGoodieItems()}
+        </div>
+
+
         <button className="btn" onClick={() => this.handleFilter("Cake")}>
           Cake
         </button>
@@ -70,7 +82,9 @@ getGoodieItems() {
         <button className="btn" onClick={() => this.handleFilter("Cupcake")}>
           Cupcake
         </button>
-        {this.showGoodieItems()}
+
+
+        
       </div>
     );
   }
