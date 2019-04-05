@@ -13,7 +13,8 @@
 
             &:hover {
                 // opacity: 0.19;
-                filter: brightness(50%);
+                filter: brightness(75%);
+                transition: 1s;
             }
         } 
     }

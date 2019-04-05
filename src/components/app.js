@@ -13,6 +13,7 @@ import AboutUs from './pages/about-us'
 import SearchBar from './search/search-bar'
 import Auth from './auth/auth'
 import ViewGoodie from './admin/viewGoodie'
+import Cart from './cart'
 
 
 
@@ -30,6 +31,7 @@ export default class App extends Component {
               <Route path='/search-bar' component={SearchBar}/>
               <Route path='/auth' component={Auth}/>
               <Route path='/view_goodie/:id' component={ViewGoodie} />
+              <Route path='/cart' component={Cart} />
             </Switch>
           </div>
         </Router>

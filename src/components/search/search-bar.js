@@ -46,6 +46,7 @@ class SearchBar extends Component {
       })
     .catch(err => {console.log("Fetch Error" + err);})
   }
+  
   handleInputChange = () => {
     this.setState({
       title: this.search.value
@@ -95,10 +96,10 @@ class SearchBar extends Component {
       </form>
 
 
-      <div>
+      {/* <div>
         {this.renderRedirect()}
         <button onClick={this.setRedirect}>Redirect</button>
-       </div>
+       </div> */}
 
 
 

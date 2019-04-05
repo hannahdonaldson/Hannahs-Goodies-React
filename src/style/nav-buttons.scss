@@ -1,4 +1,6 @@
 .goodie-items-wrapper {
+    display: flex;
+    justify-content: center;
     background-color: $grey;
     .btn {
         color: $light-blue;

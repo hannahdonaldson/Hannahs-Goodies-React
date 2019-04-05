@@ -1,0 +1,93 @@
+@media only screen and (max-width: 600px) {
+    body {
+      background-color: $offwhite;
+
+      .goodies {
+        display: grid;
+        grid-gap: 40px;
+        grid-template-columns: 1fr;
+
+        .goodie-data {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .goodie-data-title {
+                font-size: 1.17em;
+                font-weight: bold;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+
+            img {
+                display: flex;
+            justify-content: center;
+            align-items: center;
+            }
+        }
+    }
+
+    .navigation-wrapper {
+            .nav-wrapper {
+                display: flex;
+                flex-direction: column;
+    
+            .links {
+                display: flex;
+            }
+    
+            .nav-link {
+                height: 15px;
+                border-bottom: 1px solid transparent;
+                transition: 0.5s ease-in-out;
+                text-transform: uppercase;
+                font-size: 0.9rem;
+                display: flex;
+                justify-content: center;
+                font-size: 1rem;
+                width: 100px;
+    
+                a {
+                    color: $light-blue;
+                    text-decoration: none;
+                    &:hover {
+                        color: $light-blue;
+                        letter-spacing: 1px;
+                        transition: 1s;
+                        // border-bottom: 1px solid #C9FBFF;
+                    }
+                }
+    
+                .nav-link-active {
+                    color: $light-pink;
+                    letter-spacing: 1px;
+                    transition: 1s;
+                    // border-bottom: 1px solid #e6a1a8;
+                }
+            }
+    
+            .logo {
+                display: flex;
+                justify-content: center;
+                img {
+                    width: 140px;
+                    height: 80px;
+                    margin: -10px;
+                }
+            }
+            .cart-logo {
+                .cart-link {
+                    width: 100px;
+                    height: 100px;
+                    .fa-shopping-cart {
+                        color: $light-blue;
+                    }
+                }
+            }
+            .render {
+                margin-right: 10px;
+            }
+        }
+    }
+    }
+  }
