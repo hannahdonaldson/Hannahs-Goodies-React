@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 import Logo from '../../static/assets/images/hannahs-goodies-logo.png'
 
-import SearchBar from './search/search-bar'
+// import SearchBar from './search/search-bar'
 
 export default class NavigationContainer extends Component {
 	constructor(props) {
@@ -30,7 +30,7 @@ export default class NavigationContainer extends Component {
 						</NavLink>
 					</div>
 					</div>
-					<div className = "search-bar-nav"> <SearchBar /> </div>
+					{/* <div className = "search-bar-nav"> <SearchBar /> </div> */}
 					
 					<div className = "logo"> <img src={Logo} /> </div>
 				</div>

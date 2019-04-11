@@ -38,7 +38,7 @@ export default class Login extends Component {
         })
 
        if(this.state.signup) {
-            fetch("http://localhost:5000/register", {
+            fetch("https://hannahs-goodies-api.herokuapp.com/register", {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json"
@@ -69,9 +69,8 @@ export default class Login extends Component {
                     errorText: "Something went wrong", error
                 })
             });
-        } else {     
-        
-                fetch("http://localhost:5000/login", {
+        } else {
+                fetch("https://hannahs-goodies-api.herokuapp.com/login", {
                         method: "POST",
                         headers: {
                             "Content-type": "application/json"
@@ -81,11 +80,11 @@ export default class Login extends Component {
                     .then(response => response.json())
                     .then(response => {
                         if (response == "User Verfied") {
-                            Cookie.remove("session")
+                            // Cookie.remove("session")
                             Cookie.set("session", email)
-                            this.props.history.push("/")
                             console.log(Cookie.get("session"))
                             console.log('verified')
+                            this.props.history.push('/')
                         } else {
                             console.error("NOPE!")
                             // this.setState({

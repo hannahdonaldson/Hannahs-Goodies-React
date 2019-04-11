@@ -35,17 +35,6 @@ export default class GoodieButtons extends Component {
       });
   }
 
-  getGenreItems() {
-      console.log(this.state.data)
-    // this.state.data.map(item => (
-    //      <div key = {item[0]}>
-    //             <h3>title: {data[1]}</h3>
-    //             <GenreItem key={item.id} item={item} />
-    //         </div>
-    // )
-    // )
-}
-
   componentDidMount() {
     this.getGenreItems();
   }
@@ -58,19 +47,19 @@ export default class GoodieButtons extends Component {
 
     return (
       <div className="genre-items-wrapper">
-        <button className="btn" onClick={() => this.props.handleGoodieChange("all")}>
+        <button className="btn" onClick={() => this.props.handleGoodieChangeCategory("all")}>
           All
         </button>
-        <button className="btn" onClick={() => this.props.handleGoodieChange("Cake")}>
+        <button className="btn" onClick={() => this.props.handleGoodieChangeCategory("Cake")}>
           Cake
         </button>
-        <button className="btn" onClick={() => this.props.handleGoodieChange("Cookie")}>
+        <button className="btn" onClick={() => this.props.handleGoodieChangeCategory("Cookie")}>
           Cookie
         </button>
-        <button className="btn" onClick={() => this.props.handleGoodieChange("Brownie")}>
+        <button className="btn" onClick={() => this.props.handleGoodieChangeCategory("Brownie")}>
           Brownie
         </button>
-        <button className="btn" onClick={() => this.props.handleGoodieChange("Cupcake")}>
+        <button className="btn" onClick={() => this.props.handleGoodieChangeCategory("Cupcake")}>
           Cupcake
         </button>
       </div>
