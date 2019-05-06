@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router';
 import Link from 'react-router-dom';
+import { NavLink } from "react-router-dom";
+
 
 export default class ViewGoodie extends Component {
     constructor(props) {
@@ -10,11 +11,19 @@ export default class ViewGoodie extends Component {
             singleGoodie: [],
             addToCart: true,
             cartNumberItems: false,
-            numberOfItems: 1
+            numberOfItems: 1,
+            number: 0
         }
         this.addToCart = this.addToCart.bind(this)
         this.addNumberItemToCart = this.addNumberItemToCart.bind(this)
+        this.add = this.add.bind(this)
     }
+
+    add() {
+        this.setState({
+          number: this.state.number + 1
+        });
+      };
 
     componentDidMount() {
         const { id } = this.props.match.params
@@ -32,7 +41,9 @@ export default class ViewGoodie extends Component {
     }
 
     addNumberItemToCart() {
-        this.setState({numberOfItems: event.target.value});
+        this.setState({
+            numberOfItems: event.target.value
+        });
     }
 
     addToCart() {
@@ -40,16 +51,21 @@ export default class ViewGoodie extends Component {
             cartNumberItems: true
         })
         console.log('You added this to your cart')
-
-        {<Redirect push to={'/cart'} />}
     }
 
     render() {
         return(
             <div className="view-goodies">
 
-            <button onClick = {this.addToCart} style = {{display: this.state.addToCart ? 'grid' : 'none'}}> Add to Cart </button>
-            
+            {/* <Link exact to={'/cart'} > <button onClick = {this.addToCart} > Add to Cart </button>  </Link> */}
+
+            <NavLink exact to = "/cart" className = 'cart-link'>
+                <button onClick = {this.addToCart} > Add to Cart </button>
+            </NavLink>
+
+            {this.state.number}
+
+            <button className='inc' onClick={this.add}>Add</button>
             
             <form>
                 <label style = {{display: this.state.cartNumberItems ? 'none' : 'grid'}}>

@@ -124,6 +124,7 @@ class SearchBar extends Component {
             title: '',
             goodies: [],
 			data: []
+
         }
         this.handleInputChange = this.handleInputChange.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
@@ -161,7 +162,7 @@ class SearchBar extends Component {
   
   handleInputChange = () => {
     this.setState({
-      title: this.search.value
+	  title: this.search.value
     })
   }
 
@@ -170,6 +171,11 @@ class SearchBar extends Component {
   }
 
   render() {
+	//   if ("search-bar-input" === null) {
+	// 	  this.setState({
+	// 		handleGoodieChangeSearch: "all"
+	// 	  })
+	//   }
     return (
     <div className = 'search-bar-wrapper'>
         <form onSubmit={this.onSubmit}>

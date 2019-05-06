@@ -21,7 +21,6 @@ export default class NavigationContainer extends Component {
 				<div className="nav-wrapper">
 					<div className="links">
 						<div className="nav-link"><NavLink exact to="/" activeClassName="nav-link-active">Home</NavLink></div>
-						<div className="nav-link"><NavLink exact to="/form" activeClassName="nav-link-active">Checkout</NavLink></div>
 						<div className="nav-link"><NavLink exact to="/about-us" activeClassName="nav-link-active">About Us</NavLink></div>
 						<div className="nav-link"><NavLink exact to="/auth" activeClassName="nav-link-active">Login</NavLink></div>
 						<div className = 'cart-logo'> 
