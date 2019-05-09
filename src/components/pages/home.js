@@ -83,12 +83,13 @@ export default class Home extends Component {
         return(
             <div>
                 <div className = 'grid-wrapper'>
-                    <div className='home-bottom'>
+                    <div className='get-info'>
                         <div className='home-goodie-buttons'>
                             <GoodieButtons handleGoodieChangeCategory={this.handleGoodieChangeCategory} />
                         </div>
                         <div className = "search-bar-nav"> <SearchBar handleGoodieChangeSearch={this.handleGoodieChangeSearch}/> </div>
                     </div>
+                    
                     <div className="goodies" >
                         {this.state.goodies.map((data) => (
                             this.state.catagory === data[4] || this.state.searchInfo === data[1] ? (<div className="goodie-data">

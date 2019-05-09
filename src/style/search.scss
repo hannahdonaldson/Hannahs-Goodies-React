@@ -1,9 +1,13 @@
 .search-bar-wrapper {
     width: 420px;
+    @media only screen and (max-width: 600px) { 
+        // margin: 10px;
+        margin-right: -50px;
+    }
     .search {
         display: grid;
         grid-template-columns: 2fr 70px;
-        border: 2px solid #C9FBFF;
+        border: 2px solid $light-blue;
         border-radius: 2px;
         margin: 20px;
         @media only screen and (max-width: 600px) { 
@@ -24,8 +28,8 @@
             width: 100%;
             height: 100%;
             border: none;
-            background-color: #C9FBFF;
-            color: #4d4b4e;
+            background-color: $light-blue;
+            color: $grey;
             font-weight: 700;
 
             &:focus {
@@ -33,9 +37,5 @@
             }
 
         }
-    }
-
-    .render {
-        background-color: #FDE8E9;
     }
 }

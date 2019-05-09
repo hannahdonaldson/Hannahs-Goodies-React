@@ -83,7 +83,6 @@ export default class ViewGoodie extends Component {
                     <h1 className = 'title'>{this.state.singleGoodie[1]}</h1>
                     <h3 className = 'summary'>{this.state.singleGoodie[2]}</h3>
                     <h2 className = 'cost'>${this.state.singleGoodie[3]}</h2>
-                    <h2 className = 'goodie-type'>Goodie Type: {this.state.singleGoodie[4]}</h2>
                     <img className = 'img' src={this.state.singleGoodie[5]} />
                 </div>
             </div>
