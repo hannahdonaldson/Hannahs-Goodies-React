@@ -40,27 +40,21 @@ export default class Home extends Component {
 
         if (this.state.searchInfo !== null) {
             this.setState({
-                catagory: null
+                catagory: "all"
             })
         }
 
-        // if (this.state.catagory !== null) {
-        //     this.setState({
-        //         searchInfo: null
-        //     })
-        // }
-
-        // if (this.state.searchInfo === "all") {
+        // if (this.state.searchInfo === this.state.title) {
         //     this.setState({
         //         catagory: null
         //     })
         // }
 
-        // if (this.state.catagory === "all") {
-        //     this.setState({
-        //         searchInfo: null
-        //     })
-        // }
+        if (this.state.catagory === "all") {
+            this.setState({
+                searchInfo: null
+            })
+        }
     }
 
     viewInfo() {
@@ -94,8 +88,10 @@ export default class Home extends Component {
                         {this.state.goodies.map((data) => (
                             this.state.catagory === data[4] || this.state.searchInfo === data[1] ? (<div className="goodie-data">
 
-                                <div className="goodie-data-title" key = {this.state.searchInfo}>
-                                    {data[1]}
+                                <div className = "goodie-data-title">
+                                    <div className={data[1]} key = {this.state.searchInfo}>
+                                        {data[1]}
+                                    </div>
                                 </div>
                                 
                                 <Link to={`/view_goodie/${data[0]}`} ><img src={data[5]} onClick = {this.viewInfo}></img></Link> 
@@ -110,9 +106,12 @@ export default class Home extends Component {
                         {this.state.goodies.map((data) => (
                             this.state.catagory === "all" || this.state.searchInfo === "all" ? (<div className="goodie-data">
 
-                                <div className="goodie-data-title">
-                                    {data[1]}
+                                <div className = "goodie-data-title">
+                                    <div className={data[1]}>
+                                        {data[1]}
+                                    </div>
                                 </div>
+
                                 
                                 <Link to={`/view_goodie/${data[0]}`} ><img src={data[5]} onClick = {this.viewInfo}></img></Link> 
 
@@ -122,13 +121,6 @@ export default class Home extends Component {
                                 
                                 </div>) : null
                         ))}
-
-
-                        <div className="buy-goodie">
-                            <Popup trigger={<button> Buy New Spring Special Blackberry Cupcakes! </button>} position="top center">
-                                <Redirect push to={`/view_goodie/2`} />
-                            </Popup>
-                        </div>
                     </div>
                     
                 </div>

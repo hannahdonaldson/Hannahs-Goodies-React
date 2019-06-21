@@ -38,10 +38,14 @@
     }
 
     .navigation-wrapper {
+        // background-color: $grey;
+            margin: -24px;
+
             .nav-wrapper {
                 display: flex;
                 flex-direction: column;
-                margin: 22px;
+                margin: 22px;        
+
     
             .links {
                 display: flex;

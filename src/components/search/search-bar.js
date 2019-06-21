@@ -171,11 +171,6 @@ class SearchBar extends Component {
   }
 
   render() {
-	//   if ("search-bar-input" === null) {
-	// 	  this.setState({
-	// 		handleGoodieChangeSearch: "all"
-	// 	  })
-	//   }
     return (
     <div className = 'search-bar-wrapper'>
         <form onSubmit={this.onSubmit}>

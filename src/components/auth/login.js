@@ -13,7 +13,7 @@ export default class Login extends Component {
             user_type: "user",
             signup: true,
             verificationError: false,
-            errorText: ''
+            login: false
         };
         this.handleChange=this.handleChange.bind(this);
         this.handleSubmit=this.handleSubmit.bind(this);  
@@ -80,17 +80,16 @@ export default class Login extends Component {
                     .then(response => response.json())
                     .then(response => {
                         if (response == "User Verfied") {
+                            this.setState({
+                                login: true
+                            })
                             // Cookie.remove("session")
                             Cookie.set("session", email)
                             console.log(Cookie.get("session"))
                             console.log('verified')
-                            this.props.history.push('/')
+                            // this.props.history.push('/')
                         } else {
                             console.error("NOPE!")
-                            // this.setState({
-                            //     // verificationError: true
-                                
-                            // })
                         }
                     })
                     .catch(error=> {
@@ -114,9 +113,9 @@ export default class Login extends Component {
     }
 
     loginVerfication() {
-        if ("User Verfied") {
-
-        }
+        this.setState({
+            verificationError: false
+        })
     }
 
    render() {
@@ -128,9 +127,9 @@ export default class Login extends Component {
                 <li className="tab" onClick={this.showLogin} activeclassname = 'button-active'><a href="#login">Log In</a></li>
             </ul>
 
-            <NavLink exact to = "/" className = 'logout' style = {{display: this.state.signup ? 'grid' : 'none'}}>
+            {/* <NavLink exact to = "/" className = 'logout' style = {{display: this.state.signup ? 'grid' : 'none'}}>
                 <i className="fas fa-sign-out-alt" ></i>
-            </NavLink>
+            </NavLink> */}
       
       <div className="tab-content">
         <div id="signup" style={{display: this.state.signup ? "grid" : "none"}}>   
@@ -184,6 +183,12 @@ export default class Login extends Component {
 
       <div id="login" style={{display: this.state.signup ? "none" : "grid"}}>   
          <h1>Welcome Back!</h1>
+
+         <p style={{display: this.state.login ? "block" : "none"}}>        
+                <NavLink exact to = "/" className = 'logout' >
+                    <i className="fas fa-sign-out-alt" ></i>
+                </NavLink>
+            </p>
                 
             <form onSubmit={this.handleSubmit}>
         

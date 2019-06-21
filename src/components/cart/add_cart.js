@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
-
-export default class AddGoodie extends Component {
+export default class AddCart extends Component {
     constructor(props) {
         super(props)
 
@@ -10,7 +9,7 @@ export default class AddGoodie extends Component {
             summary: '',
             cost: '',
             goodieType: '',
-            quantity: ''
+            goodie_url: ''
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -24,30 +23,25 @@ export default class AddGoodie extends Component {
     handleSubmit(event) {
         event.preventDefault();
         
-        let title = this.state.title
-        let summary = this.state.summary
-        let cost = this.state.cost
-        let goodieType = this.state.goodieType
-        let quantity = this.state.quantity
-
-        fetch ("https://book-api-practice.herokuapp.com/book/input", {
+        let title = this.state.title, summary = this.state.summary, cost = this.state.cost, goodieType = this.state.goodieType, goodie_url = this.state.goodie_url
+        fetch ("https://hannahs-goodies-api.herokuapp.com/goodie/input", {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
             },
-            body:JSON.stringify({title: title, summary: summary, cost: cost, goodieType: goodieType, quantity: quantity})
+            body:JSON.stringify({title: title, summary: summary, cost: cost, goodieType: goodieType, goodie_url: goodie_url})
         })
         .then(response => {return response.json();})
         .then(responseData => {return responseData})
-        .then(() => {this.props.history.push('/')})
-        .catch(err => {console.log("Fetch Error" + err)})
+        .then(() => {console.log("Data Posted")})
+        .catch(err => {console.log("Fetch Error " + err)})
     }
 
 
     render() {
         return(
-            <div className = 'goodies'>
-                <h1>Add a Book Below</h1>
+            <div className = 'books'>
+                <h1>Add to Cart</h1>
                 <form onSubmit={this.handleSubmit}>
                     <label>Title</label>
                     <input type="text" name="title" value={this.state.title} onChange={this.handleChange}/>
@@ -57,11 +51,10 @@ export default class AddGoodie extends Component {
                     <input type="text" name="cost" value={this.state.cost} onChange={this.handleChange}/>
                     <label>Goodie Type</label>
                     <input type="text" name="goodieType" value={this.state.goodieType} onChange={this.handleChange}/>
-                    <label>Quantity</label>
-                    <input type="text" name="quantity" value={this.state.quantity} onChange={this.handleChange}/>
+                    <label>Goodie Url</label>
+                    <input type="text" name="goodie_url" value={this.state.goodie_url} onChange={this.handleChange}/>
                     <input type="submit" value="submit"/>
                 </form>
-                
             </div>
         )
     }
