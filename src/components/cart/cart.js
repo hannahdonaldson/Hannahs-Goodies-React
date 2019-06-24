@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import AddCart from './add_cart'
 
 
-export default class AddBook extends Component {
+export default class AddGoodie extends Component {
     constructor(props) {
         super(props)
 
@@ -26,7 +26,7 @@ export default class AddBook extends Component {
         event.preventDefault();
         
         let title = this.state.title, summary = this.state.summary, cost = this.state.cost, goodie_url = this.state.goodie_url
-        fetch ("https://hannahs-goodies-api.herokuapp.com/goodie/input", {
+        fetch ("https://hannahs-goodies-api.herokuapp.com/cart/input", {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"

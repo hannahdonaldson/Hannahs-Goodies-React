@@ -31,7 +31,7 @@ export default class CheckoutPage extends React.Component {
             }
         })
         .then(response => {return response.json()})
-        .then(data => {this.setState({singleBook: data})})
+        .then(data => {this.setState({singleGoodie: data})})
         .catch(err => {console.log("Fetch Error " + err)})
     }
 

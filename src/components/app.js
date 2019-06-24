@@ -11,7 +11,7 @@ import Home from './pages/home'
 import AboutUs from './pages/about-us'
 import SearchBar from './search/search-bar'
 import Auth from './auth/auth'
-import ViewGoodie from './admin/viewGoodie'
+import ViewGoodie from './viewGoodie'
 import Cart from './cart/cart'
 import CheckoutPage from './pages/checkout';
 
